@@ -17,3 +17,5 @@ Bachelor's degree project to help determine path for railway. This repository co
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+![alt text](Train_Route_Choice_Support_System___Article.pdf)
