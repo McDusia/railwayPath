@@ -6,9 +6,9 @@ This paper describes the Train Route Choice Support System, which is implemented
 
 
 ## Introduction
-The main goal of the paper was to create a system that aids in finding new train routes. Designing new sections of train routes is a complex task. This is an \textbf{optimization problem}, where the aim is to find the best solution from all feasible solutions. Similar problems are designing new sections of roads or finding the best path for pipelines. Still, most of these problems are being resolved manually, only with a little support by computer software. The cause of problems being resolved manually is due to the fact that there are \textbf{many factors}\cite{clues_to_optimization} which have an impact on the optimal solution and a lot of them are difficult to take into account in computer software (for instance people, government preferences). Despite this, software, which can improve and automate the process of choosing the optimal solution, even in some part, are desired, because they can significantly reduce costs. In the paper the main focus is on supporting choosing the optimal new section of train route mainly based on information about parcels, which the route will be going through. Train Route Choice Support System gives an estimated price of drawing a specific route and provides extra information with tips for specialised engineers. This therefore aids in choosing the optimal trace. 
+The main goal of the paper was to create a system that aids in finding new train routes. Designing new sections of train routes is a complex task. This is an optimization problem, where the aim is to find the best solution from all feasible solutions. Similar problems are designing new sections of roads or finding the best path for pipelines. Still, most of these problems are being resolved manually, only with a little support by computer software. The cause of problems being resolved manually is due to the fact that there are many factors, which have an impact on the optimal solution and a lot of them are difficult to take into account in computer software (for instance people, government preferences). Despite this, software, which can improve and automate the process of choosing the optimal solution, even in some part, are desired, because they can significantly reduce costs. In the paper the main focus is on supporting choosing the optimal new section of train route mainly based on information about parcels, which the route will be going through. Train Route Choice Support System gives an estimated price of drawing a specific route and provides extra information with tips for specialised engineers. This therefore aids in choosing the optimal trace. 
 
-There are \textbf{a few solutions on the market}\cite{Ferrovia}\cite{Rail_Simulation}, but they are expensive and there is no possibility to adjust them to customer needs. What is more, all developed solutions do not consider fields' prices and do not optimize their prices. Train Route Choice Support System is designed to reduce costs using information about parcels, which has not been implemented in any available solutions.
+There are a few solutions on the market, but they are expensive and there is no possibility to adjust them to customer needs. What is more, all developed solutions do not consider fields' prices and do not optimize their prices. Train Route Choice Support System is designed to reduce costs using information about parcels, which has not been implemented in any available solutions.
 
 ## Related Work
 \section{Related work}
@@ -43,23 +43,15 @@ Currently designing new section of railway road is manual work of specialised en
 ## System Description
 This paragraph describes Train Route Choice Support System overview and most interesting aspects of system.
 ### System Overview
-% Is the solution of the problem correct and is it presented in 
-% a convincing way; is the methodology described?
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.55\textwidth]{drawPath.png}
-  \caption{This figure shows the usage of Train Route Choice Support System.}
-\end{figure}
+![alt text](drawPath.png)
+ Figure 1: This figure shows the usage of Train Route Choice Support System.}
 
 Train Route Choice Support System (TRCSS) is designed to support process of choosing routes by specialised engineers.
 It provide drawing railway path and adjusting it in the runtime (Figure 1). TRCSS includes estimation of each parcel price in Los Angeles County using machine learning techniques. Also systems present all geometrical requirements exceeding in the runtime. Essential capacities of the system are presented in Figure 2.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.75\textwidth]{SchemaBig.png}
-  \caption{Flow diagram shows system abilities.}
-\end{figure}
+![alt text](SchemaBig.png)
+Figure 2: Flow diagram shows system abilities.}
 
 ### Parcel Prices Prediction
 There were used two-phase approach to estimate parcel prices.
@@ -74,21 +66,13 @@ TRCSS has implemented validation of fall in the area and radius of curvature. To
 
 Price estimation results are satisfying. Using two-phase approach (firstly use classification and then regression) led to good accuracy (Figure 3). 
 
-\begin{figure}[H]
-\begin{center}
-\begin{tabular}{ |c|c|c|c|} 
-\hline
-Price &  Mean absolute & Mean absolute \\
-bucket  &  error [\$] & error [\%] \\
-\hline
-cheap &   5857.6646 & 2.4121\% \\ 
-medium  & 19392.5527 & 2.6547\% \\ 
-expensive &  14674.8105 & 0.4017\% \\ 
-\hline
-\end{tabular}
-\end{center}
-\caption{Table shows the accuracy the parcel prices estimations for each price bucket for those parcels with data about last sale price.}
-\end{figure}
+| Price bucket  | Mean absolute error | Mean absolute error [%] |
+| ------------- | ------------- | ------------- |
+| cheap  | 5857.6646  | 2.4121% |
+| medium  | 19392.5527  | 2.6547% |
+| expensive  | 14674.8105  | 0.4017% |
+
+Figure 3: Table shows the accuracy the parcel prices estimations for each price bucket for those parcels with data about last sale price.
 
 ### Meeting Geometrical Requirements Support
 The validation of fall in the area is sufficient for estimate what additional adjustments (for instance leveling the area) must be implemented. The validation of the radius of curvature shows user that he must change the route slightly. Listed validations improve specialised engineers work.  
@@ -114,5 +98,4 @@ It is planned to implement more functionalities in application to present routes
     - use other information from database like type of the area to enable exclude routes through airport, highway etc.
 
 ## License
-![alt text](Train_Route_Choice_Support_System___Article.pdf)
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
